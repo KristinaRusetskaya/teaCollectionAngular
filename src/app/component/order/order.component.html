@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <h2 class="text-center mt-5 mb-5 fw-bold">Сделать заказ</h2>
+  <div class="position-relative">
+    <form class="col-lg-6 mt-0 mb-5 me-auto ms-auto animate__animated" id="formTea">
+      <div class="row g-3 mb-3">
+        <div class="col">
+          Имя
+          <input type="text" class="form-control form-controls" id="name">
+        </div>
+        <div class="col">
+          Фамилия
+          <input type="text" class="form-control form-control" id="surname">
+        </div>
+        <div class="col">
+          Телефон
+          <input type="text" class="form-control form-control" id="phone">
+        </div>
+      </div>
+      <div class="row g-3 mb-3">
+        <div class="col">
+          Страна
+          <input type="text" class="form-control form-control" id="country">
+        </div>
+        <div class="col">
+          Индекс
+          <input type="number" maxlength="6" class="form-control form-control" id="index">
+        </div>
+      </div>
+      <div class="row g-3 mb-4">
+        <div class="col">
+          Адрес
+          <input type="text" class="form-control form-control" id="address">
+        </div>
+      </div>
+      <button type="button" id="button" class="btn btn-primary pe-4 ps-4 hvr-pulse-grow">Отправить</button>
+    </form>
+    <div id="alert"
+         class="d-none col-lg-6 me-auto ms-auto text-center position-absolute top-50 start-50 translate-middle border border-secondary-subtle p-5 rounded">
+      Спасибо за заказ. Мы свяжемся с вами в ближайшее время!
+    </div>
+  </div>
+</div>
