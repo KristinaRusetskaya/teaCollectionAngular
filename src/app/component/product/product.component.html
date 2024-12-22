@@ -1,3 +1,13 @@
 <div class="container mt-5">
-
+  <div class="card-product mt-4 d-flex flex-column">
+    <h5 class="card-title text-center">{{ product.title }}</h5>
+    <div class="card-info d-flex">
+      <div class="card-buy d-flex">
+        <img src="{{product.image}}" class="card-buy-image" alt="Tea1">
+        <div class="card-buy-price">{{ product.price }}₽</div>
+        <a class="card-buy-button btn btn-primary px-5 mt-auto" routerLink="/order" [queryParams]="{product: product.title}">Купить</a>
+      </div>
+      <p class="card-description">{{ product.description }}</p>
+    </div>
+  </div>
 </div>

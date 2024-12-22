@@ -25,9 +25,20 @@
               "src/assets"
             ],
             "styles": [
+              "src/libraries/css/jquery-ui.min.css",
+              "src/libraries/css/bootstrap.min.css",
+              "src/libraries/css/magnific-popup.css",
+              "src/libraries/css/slick.css",
+              "src/libraries/css/slick-theme.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/libraries/js/bootstrap.min.js",
+              "src/libraries/js/jquery-3.7.1.min.js",
+              "src/libraries/js/jquery-ui.min.js",
+              "src/libraries/js/jquery.magnific-popup.min.js",
+              "src/libraries/js/slick.min.js"
+            ]
           },
           "configurations": {
             "production": {

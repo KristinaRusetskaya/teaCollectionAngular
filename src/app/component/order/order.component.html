@@ -1,41 +1,97 @@
 <div class="container mt-5">
   <h2 class="text-center mt-5 mb-5 fw-bold">Сделать заказ</h2>
   <div class="position-relative">
-    <form class="col-lg-6 mt-0 mb-5 me-auto ms-auto animate__animated" id="formTea">
+    <form class="col-lg-6 mt-0 mb-5 me-auto ms-auto animate__animated" id="formTea" *ngIf="!successRequest" [formGroup]="orderForm">
       <div class="row g-3 mb-3">
         <div class="col">
-          Имя
-          <input type="text" class="form-control form-controls" id="name">
+          <label for="name" [class]="{'text-danger': name?.invalid && (name?.dirty || name?.touched)}">Имя</label>
+          <input type="text" class="form-control form-controls" id="name" formControlName="name"
+          [class]="{'border-danger': name?.invalid && (name?.dirty || name?.touched)}">
+          <div style="font-size: 10px" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+            <div class="text-danger" *ngIf="name?.errors?.['required']">
+              Введите имя!
+            </div>
+            <div class="text-danger" *ngIf="name?.errors?.['pattern']">
+              Можно вводить только буквы!
+            </div>
+          </div>
         </div>
+
         <div class="col">
-          Фамилия
-          <input type="text" class="form-control form-control" id="surname">
+          <label for="surname" [class]="{'text-danger': lastName?.invalid && (lastName?.dirty || lastName?.touched)}">Фамилия</label>
+          <input type="text" class="form-control form-control" id="surname" formControlName="lastName"
+                 [class]="{'border-danger': lastName?.invalid && (lastName?.dirty || lastName?.touched)}">
+          <div style="font-size: 10px" *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+            <div class="text-danger" *ngIf="lastName?.errors?.['required']">
+              Введите фамилию!
+            </div>
+            <div class="text-danger" *ngIf="lastName?.errors?.['pattern']">
+              Можно вводить только буквы!
+            </div>
+          </div>
         </div>
+
         <div class="col">
-          Телефон
-          <input type="text" class="form-control form-control" id="phone">
+          <label for="phone" [class]="{'text-danger': phone?.invalid && (phone?.dirty || phone?.touched)}">Телефон</label>
+          <input type="text" class="form-control form-control" id="phone" formControlName="phone"
+                 [class]="{'border-danger': phone?.invalid && (phone?.dirty || phone?.touched)}">
+          <div style="font-size: 10px" *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+            <div class="text-danger" *ngIf="phone?.errors?.['required']">
+              Введите номер телефона!
+            </div>
+            <div class="text-danger" *ngIf="phone?.errors?.['pattern']">
+              Можно вводить только знак "+" в начале и далее цифры! Номер должен содержать 11 цифр!
+            </div>
+        </div>
         </div>
       </div>
+
       <div class="row g-3 mb-3">
         <div class="col">
-          Страна
-          <input type="text" class="form-control form-control" id="country">
+          <label for="country" [class]="{'text-danger': country?.invalid && (country?.dirty || country?.touched)}">Страна</label>
+          <input type="text" class="form-control form-control" id="country" formControlName="country"
+                 [class]="{'border-danger': country?.invalid && (country?.dirty || country?.touched)}">
+          <div style="font-size: 10px" class="text-danger" *ngIf="country?.invalid && (country?.dirty || country?.touched)">
+              Введите страну!
+          </div>
         </div>
         <div class="col">
-          Индекс
-          <input type="number" maxlength="6" class="form-control form-control" id="index">
+          <label for="index">Индекс</label>
+          <input type="number" maxlength="6" class="form-control form-control" id="index" formControlName="index">
         </div>
       </div>
       <div class="row g-3 mb-4">
         <div class="col">
-          Адрес
-          <input type="text" class="form-control form-control" id="address">
+          <label for="address" [class]="{'text-danger': address?.invalid && (address?.dirty || address?.touched)}">Адрес</label>
+          <input type="text" class="form-control form-control" id="address" formControlName="address"
+                 [class]="{'border-danger': address?.invalid && (address?.dirty || address?.touched)}">
+          <div style="font-size: 10px" *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+            <div class="text-danger" *ngIf="address?.errors?.['required']">
+              Введите адрес!
+            </div>
+            <div class="text-danger" *ngIf="address?.errors?.['pattern']">
+              Можно вводить только: буквы, цифры, пробелы, дефис и слеш!
+            </div>
+          </div>
         </div>
       </div>
-      <button type="button" id="button" class="btn btn-primary pe-4 ps-4 hvr-pulse-grow">Отправить</button>
+      <div class="row g-3 mb-4">
+        <div class="col">
+          <label for="product">Товар</label>
+          <input type="text" class="form-control form-control" id="product" formControlName="product">
+        </div>
+      </div>
+      <div class="row g-3 mb-4">
+        <div class="col">
+          <label for="comment">Комментарий</label>
+          <textarea class="form-control form-control" id="comment" formControlName="comment"></textarea>
+        </div>
+      </div>
+      <button type="button" id="button" class="btn btn-primary pe-4 ps-4 hvr-pulse-grow" (click)="createOrder()">Отправить</button>
+      <div *ngIf="errorRequest">Произошла ошибка. Попробуйте еще раз.</div>
     </form>
-    <div id="alert"
-         class="d-none col-lg-6 me-auto ms-auto text-center position-absolute top-50 start-50 translate-middle border border-secondary-subtle p-5 rounded">
+    <div *ngIf="successRequest" id="alert" style="margin: 0 auto"
+         class="col-lg-6 text-center border border-secondary-subtle p-5 rounded">
       Спасибо за заказ. Мы свяжемся с вами в ближайшее время!
     </div>
   </div>

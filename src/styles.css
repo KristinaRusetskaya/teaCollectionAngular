@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+.slick-prev:before {
+  content: url("./assets/images/arrowleft.png");
+}
+.slick-next:before {
+  content: url("./assets/images/arrowright.png");
+}
+.slick-prev {
+  left: 15px;
+  z-index: 4;
+}
+.slick-next {
+  right: 35px;
+  z-index: 4;
+}
+.accordion-title {
+  position: relative;
+}
+.accordion-title span {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+.ui-state-active .ui-icon {
+  background-image: url("./assets/images/arrowtop.png");
+  background-size: contain;
+  background-position: 0;
+}
+.ui-icon {
+  background-image: url("./assets/images/arrowbottom.png");
+  background-size: contain;
+  background-position: 0;
+}
+.ui-state-hover .ui-icon {
+  background-image: url("./assets/images/arrowbottom.png");
+  background-size: contain;
+  background-position: 0;
+}
+.ui-state-hover.ui-state-active .ui-icon {
+  background-image: url("./assets/images/arrowtop.png");
+  background-size: contain;
+  background-position: 0;
+}
+.container img {
+  width: 100%;
+  height: 100%;
+}
