@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
-import {SendingOrderService} from "../../services/sending-order.service";
+import {SendingOrderService} from "../../shared/services/sending-order.service";
 
 @Component({
   selector: 'order-component',

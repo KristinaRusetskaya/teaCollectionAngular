@@ -3,28 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './component/product/product.component';
-import { OrderComponent } from './component/order/order.component';
-import { CatalogComponent } from './component/catalog/catalog.component';
-import { HomeComponent } from './component/home/home.component';
 import {HttpClientModule} from "@angular/common/http";
-import { SplitDescriptionPipe } from './pipes/split-description.pipe';
-import {ReactiveFormsModule} from "@angular/forms";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {ProductsModule} from "./views/products/products.module";
+import {MainModule} from "./views/main/main.module";
+import {OrderModule} from "./views/order/order.module";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
-    OrderComponent,
-    CatalogComponent,
-    HomeComponent,
-    SplitDescriptionPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    NgbModule,
+    ProductsModule,
+    MainModule,
+    OrderModule,
+    SharedModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

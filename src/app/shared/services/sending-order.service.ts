@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {DataOrderType} from "../types/data-order.type";
+import {DataOrderType} from "../../../types/data-order.type";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SendingOrderService {
 
   constructor(private http: HttpClient) { }
