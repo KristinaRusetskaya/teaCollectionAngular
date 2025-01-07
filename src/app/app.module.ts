@@ -5,22 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {ProductsModule} from "./views/products/products.module";
-import {MainModule} from "./views/main/main.module";
-import {OrderModule} from "./views/order/order.module";
 import {SharedModule} from "./shared/shared.module";
+import { LayoutComponent } from './views/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
-    ProductsModule,
-    MainModule,
-    OrderModule,
     SharedModule,
     AppRoutingModule,
   ],

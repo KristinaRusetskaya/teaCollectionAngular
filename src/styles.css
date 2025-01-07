@@ -34,8 +34,22 @@ footer {
   right: 35px;
   z-index: 4;
 }
+.accordion-button:focus {
+  box-shadow: none;
+}
+.accordion-item {
+  margin-bottom: 16px;
+  border: none;
+}
 .accordion-title {
   position: relative;
+}
+
+.accordion-title:after {
+  background-image: url("./assets/images/arrowbottom.png");
+}
+.accordion-title:not(.collapsed):after {
+  background-image: url("./assets/images/arrowbottom.png");
 }
 .accordion-title span {
   position: absolute;
