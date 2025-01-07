@@ -1,38 +1,60 @@
 <div class="container mt-5">
   <img src="./assets/images/banner1.png" alt="Banner1">
   <h2 class="text-center mt-5 mb-5 fw-bold">Ответы на часто задаваемые вопросы</h2>
-  <div id="accordion" class="col-lg-8 mt-0 mb-0 me-auto ms-auto">
-    <h3 class="accordion-title p-4 border-0 rounded bg-primary text-white">Собираете ли вы подарочные боксы?</h3>
-    <div class="border-0">
-      <p class="my-auto">
-        Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
-      </p>
+  <div ngbAccordion class="col-lg-8 mt-0 mb-0 me-auto ms-auto">
+    <div ngbAccordionItem>
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton class="accordion-title p-4 border-0 rounded bg-primary text-white">Собираете ли вы подарочные боксы?</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody class="border-0">
+          <ng-template class="my-auto">Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!</ng-template>
+        </div>
+      </div>
     </div>
-    <h3 class="accordion-title p-4 border-0 rounded bg-primary text-white mt-3">Сколько у вас разновидностей
-      чая?</h3>
-    <div class="border-0">
-      <p class="my-auto">
-        На данный момент 6 видов.
-      </p>
+
+    <div ngbAccordionItem>
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton class="accordion-title p-4 border-0 rounded bg-primary text-white">Сколько у вас разновидностей чая?</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody class="border-0">
+          <ng-template class="my-auto">На данный момент 6 видов.</ng-template>
+        </div>
+      </div>
     </div>
-    <h3 class="accordion-title p-4 border-0 rounded bg-primary text-white mt-3">В какой срок осуществляется
-      доставка?</h3>
-    <div class="border-0">
-      <p class="my-auto">
-        Доставка осуществляется от 2 до 5 рабочих дней.
-      </p>
+
+    <div ngbAccordionItem>
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton class="accordion-title p-4 border-0 rounded bg-primary text-white">В какой срок осуществляется доставка?</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody class="border-0">
+          <ng-template class="my-auto">Доставка осуществляется от 2 до 5 рабочих дней.</ng-template>
+        </div>
+      </div>
     </div>
-    <h3 class="accordion-title p-4 border-0 rounded bg-primary text-white mt-3">У вас обновляется ассортимент?</h3>
-    <div class="border-0">
-      <p class="my-auto">
-        Конечно, есть основные виды чая, а есть сезонные, которые меняются раз в три месяца.
-      </p>
+
+    <div ngbAccordionItem>
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton class="accordion-title p-4 border-0 rounded bg-primary text-white">У вас обновляется ассортимент?</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody class="border-0">
+          <ng-template class="my-auto">Конечно, есть основные виды чая, а есть сезонные, которые меняются раз в три месяца.</ng-template>
+        </div>
+      </div>
     </div>
-    <h3 class="accordion-title p-4 border-0 rounded bg-primary text-white mt-3">Какого объема у вас пачки чая?</h3>
-    <div class="border-0">
-      <p class="my-auto">
-        Одной пачки обычно хватает на 10 заварок.
-      </p>
+
+    <div ngbAccordionItem>
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton class="accordion-title p-4 border-0 rounded bg-primary text-white">Какого объема у вас пачки чая?</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody class="border-0">
+          <ng-template class="my-auto">Одной пачки обычно хватает на 10 заварок.</ng-template>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -40,6 +62,6 @@
     <div class="popup-text mb-3">
       Посмотрите наши чайные коллекции
     </div>
-    <a href="/catalog" class="btn btn-primary px-4 mt-auto">Смотреть</a>
+    <a href="/products/catalog" class="btn btn-primary px-4 mt-auto">Смотреть</a>
   </div>
 </div>
